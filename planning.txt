@@ -1,0 +1,35 @@
+Allowed functions: open, close, read, write, malloc, free, perror(?), strerror(?), exit
+
+math library -lm man man 3 math
+
+miniLibX functions
+
+all coded functions
+
+Elements: Player, Exit, collectibles, free space
+
+WASD up, left, down, right
+
+Wall- Collision prevention
+
+number of movements in terminal
+
+2D
+
+real time(?)
+
+display image window
+management - switching window, minimizing
+esc & click X = close window in clean way
+
+MAP:
+0 - empty space
+1 - Wall
+C - collectibles (At least 1)
+E - exit (At least 1)
+P - player starting pos. (At least 1)
+Rectangular, Closed by walls
+Dont have to check for valid path
+parse all kinds of maps.
+Exit clean and return Error\n and explicit error message
+
