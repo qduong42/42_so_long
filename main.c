@@ -1,45 +1,76 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
+/*   Updated: 2022/04/17 13:04:44 by qduong           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mlx/mlx.h"
+#include "printf/ft_printf.h"
+#include "so_long.h"
+#include <stdio.h>
 
-typedef struct	s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_data;
-
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+int	check_argc(int argc, char **argv)
 {
-	char	*dst;
+	int	i;
 
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	if (argc != 2)
+		exit(write(1, "Run the program with\t ./so_long valid_map.ber\n", 47));
+	i = ft_strlen(argv[1]);
+	if (i == 0)
+		exit(write(1, "Run the program with\t ./so_long valid_map.ber\n", 47));
+	return (0);
 }
 
-int main (void)
-{
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
-	
+//i[0] = strlen of second argument
+//i[1] = counter for last string index
+//i[2] = index to check last position of a[4]
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window (mlx, 1920, 1080, "Hello World!");
-	img.img = mlx_new_image(mlx, 1920, 1080);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	int offset = (1080 * img.line_length + 1920 * (img.bits_per_pixel / 8));
-	int x = 50;
-	int y = 50;
-	while (x <= 1000)
+int	check_input(int argc, char **argv)
+{
+	int		i[3];
+	char	a[4];
+
+	check_argc(argc, argv);
+	i[2] = 3;
+	a[0] = '.';
+	a[1] = 'b';
+	a[2] = 'e';
+	a[3] = 'r';
+	i[0] = ft_strlen(argv[1]);
+	i[1] = 1;
+	while (argv[1][i[0] - i[1]] && i[2] >= 0 && i[1] <= 4)
 	{
-		my_mlx_pixel_put(&img, x, y, 0x00FFFF00);
-		while(y <= 1000)
+		if (argv[1][i[0] - i[1]] == a[i[2]])
 		{
-			my_mlx_pixel_put(&img, x, y, 0x00FFFF00);
-			y++;
+			i[1]++;
+			i[2]--;
 		}
-		x++;
+		else
+			exit(write(1, "Run the program with\t\
+			./so_long valid_map.ber\n", 49));
 	}
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+	return (write(1, "Opening file will be attempted", 31));
+}
+
+void	parse_map(char **argv)
+{
+	
+	return ;
+}
+
+int	main(int argc, char **argv)
+{
+	t_vars	mlx;
+
+	check_input(argc, argv);
+	parse_map(argv);
+	mlx.mlx = mlx_init();
+	mlx.win = mlx_new_window(mlx.mlx, 32, 64, "so_long");
+	return (0);
 }
