@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/18 17:02:05 by qduong            #+#    #+#              #
-#    Updated: 2022/04/20 23:05:32 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/21 13:47:36 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS =	main.c \
 		argv_check.c \
 		freestuff.c
 #map_parse_so_long_test.c
-
+RM = rm -rf
 CC = gcc
 OBJS = ${SRCS:.c=.o}
 
@@ -34,10 +34,15 @@ $(NAME): $(OBJS)
 
 clean:
 	${RM} ${OBJS}
-	$(RM) */*.o */*/*.o
+	@make clean -C lib/
+	@make clean -C lib/libft
+#$(RM) */*.o */*/*.o
 
 fclean: clean
-	${RM} $(NAME) 
+	${RM} $(NAME) libftprintf.a
+	@make fclean -C lib/
+	@make fclean -C lib/libft
+	$(RM) *.dSYM 
 
 re: fclean all
 

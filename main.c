@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/20 22:53:49 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/21 14:44:34 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	full_check_map(&mlx);
 	//clean up to this point
 	mlx.mlx = mlx_init();
-	mlx.win = mlx_new_window(mlx.mlx, 32, 64, "so_long");
+	mlx.win = mlx_new_window(mlx.mlx, mlx.game.dim.x * 32,\
+	mlx.game.dim.y * 32, "so_long");
+	mlx_loop(mlx.mlx);
 	return (0);
 }
