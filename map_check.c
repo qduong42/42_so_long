@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:40:12 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/20 23:07:59 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/21 19:55:20 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ void	parse_map(char **argv, t_vars *mlx)
 	int		fd;
 	int		i;
 
-	mlx->map = ft_calloc(mlx->game.dim.y, sizeof(t_game *));
+	mlx->map = ft_calloc(mlx->game.dim.y + 1, sizeof(char *));
 	i = 0;
 	fd = open(*argv, O_RDONLY);
 	while (i < mlx->game.dim.y)
 	{
+		printf("XXXXXXX\n");
 		mlx->map[i] = get_next_line(fd);
 		printf("Length x:[%d]%zu\n", i, ft_len(mlx->map[i]));
 		if (ft_len(mlx->map[i]) != (size_t)(mlx->game.dim.x))
@@ -30,7 +31,8 @@ void	parse_map(char **argv, t_vars *mlx)
 			freeme(mlx, i, fd);
 			exit(ft_putstr_fd("Map not straight", 2));
 		}
-		printf("Map string%i:%s\n",i,mlx->map[i]);
+		printf("game.y:%d\n", mlx->game.dim.y);
+		printf("Map string[%i]:%s", i, mlx->map[i]);
 		i++;
 	}
 	close(fd);
