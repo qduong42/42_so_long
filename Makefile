@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/18 17:02:05 by qduong            #+#    #+#              #
-#    Updated: 2022/04/22 18:45:14 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/22 19:25:45 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ fclean: clean
 	${RM} $(NAME) libftprintf.a
 	@make fclean -C lib/
 	@make fclean -C lib/libft
-	$(RM) *.dSYM 
+	$(RM) *.dSYM
+	$(RM) mlx/libmlx.a
 
 re: fclean all
 
