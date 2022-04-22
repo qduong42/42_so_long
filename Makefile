@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/18 17:02:05 by qduong            #+#    #+#              #
-#    Updated: 2022/04/21 13:47:36 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/22 18:45:14 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,12 @@ OBJS = ${SRCS:.c=.o}
 NAME = so_long
 
 all: $(NAME)
+
+run:
+	./so_long maps/簡単.ber
+	
+up:
+	./so_long maps/上.ber
 
 $(NAME): $(OBJS)
 	$(MAKE) -C mlx
