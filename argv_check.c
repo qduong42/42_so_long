@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:35:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/20 22:15:11 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/22 19:13:21 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	init(t_vars *mlx)
 	mlx->game.start = 0;
 	mlx->game.exit = 0;
 	mlx->game.collectibles = 0;
+	mlx->game.moves = 0;
 }
 
 int	check_argc(int argc, char **argv)

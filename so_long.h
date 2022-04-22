@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 19:33:48 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/21 19:55:31 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/22 19:13:00 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@
 # include "mlx/mlx.h"
 # include "lib/ft_printf.h"
 # include "lib/get_next_line.h"
+
+/*
+** DEFINE KEYS
+*/
+enum keys
+{
+	ESC = 53,
+	UP = 13,
+	DOWN = 1,
+	LEFT = 0,
+	RIGHT = 2
+};
 
 typedef struct s_coords
 {
@@ -32,6 +44,7 @@ typedef struct s_game
 	int			space;
 	t_coords	pos;
 	t_coords	dim;
+	int			moves;
 }				t_game;
 
 typedef struct s_vars
@@ -65,5 +78,6 @@ size_t	ft_len(const char *s);
 
 void	freeme(t_vars *mlx, int i, int fd);
 void	freeme2(t_vars *mlx);
+int		freeme3(t_vars *mlx);
 
 #endif
