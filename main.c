@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 15:18:14 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/24 18:04:40 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,65 @@ int	key_hook(int key, t_vars *mlx)
 	//mlx_hook(mlx.win, 2, 0, hero_move, &mlx); Can be used instead
 	//keyhook because 2 is key input
 
+void	load(t_vars *mlx)
+{
+	mlx -> wall = mlx_xpm_file_to_image(mlx->mlx, \
+	"images/wall.xpm", &mlx->imgx, &mlx->imgy);
+	mlx -> collect = mlx_xpm_file_to_image(mlx->mlx, \
+	"images/き.xpm", &mlx->imgx, &mlx->imgy);
+	mlx -> player = mlx_xpm_file_to_image(mlx->mlx, \
+	"images/P2.xpm", &mlx->imgx, &mlx->imgy);
+	mlx -> exit = mlx_xpm_file_to_image(mlx->mlx, \
+	"images/exit.xpm", &mlx->imgx, &mlx->imgy);
+	mlx->space = mlx_xpm_file_to_image(mlx->mlx, \
+	"images/tatami.xpm", &mlx->imgx, &mlx->imgy);
+}
+
+void	put_stuff(t_vars *mlx, int x, int y, char c)
+{
+	if (c == '1')
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->wall, \
+		x * mlx->imgx, y * mlx->imgy);
+	else if (c == 'C')
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->collect, \
+	x * mlx->imgx, y * mlx->imgy);
+	else if (c == 'P')
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->player, \
+	x * mlx->imgx, y * mlx->imgy);
+	else if (c == 'E')
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->exit, \
+	x * mlx->imgx, y * mlx->imgy);
+	else if (c == '0')
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->space, \
+	x * mlx->imgx, y * mlx->imgy);
+}
+
+void	gib_image(t_vars *mlx)
+{
+	int	x;
+	int	y;
+
+	y = -1;
+	load(mlx);
+	while (++y < mlx->game.dim.y)
+	{
+		x = -1;
+		while (++x < mlx->game.dim.x)
+		{
+			if (mlx->map[y][x] == '1')
+				put_stuff(mlx, x, y, '1');
+			if (mlx->map[y][x] == 'C')
+				put_stuff(mlx, x, y, 'C');
+			if (mlx->map[y][x] == 'P')
+				put_stuff(mlx, x, y, 'P');
+			if (mlx->map[y][x] == 'E')
+				put_stuff(mlx, x, y, 'E');
+			else if (mlx->map[y][x] == '0')
+				put_stuff(mlx, x, y, '0');
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_vars	mlx;
@@ -62,6 +121,8 @@ int	main(int argc, char **argv)
 	mlx.mlx = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx, mlx.game.dim.x * 32, \
 	mlx.game.dim.y * 32, "so_long");
+	printf("Dimensions of X%d & Y%d\n", mlx.game.dim.x, mlx.game.dim.y);
+	gib_image(&mlx);
 	mlx_key_hook(mlx.win, key_hook, &mlx);
 	mlx_hook(mlx.win, 17, 0, freeme3, &mlx);
 	mlx_loop(mlx.mlx);
