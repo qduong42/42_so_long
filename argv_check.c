@@ -6,12 +6,11 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:35:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/22 19:13:21 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/24 15:15:34 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	init(t_vars *mlx)
 {

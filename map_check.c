@@ -6,12 +6,16 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:40:12 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/22 18:27:28 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/24 15:25:41 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
+/*
+Code to test:
+**insert 30-31 	printf("Length x:[%d]%zu\n", i, ft_len(mlx->map[i]));
+**insert 31-32 	printf("Map string[%i]:%s", i, mlx->map[i]);
+*/
 
 void	parse_map(char **argv, t_vars *mlx)
 {
@@ -24,13 +28,11 @@ void	parse_map(char **argv, t_vars *mlx)
 	while (i < mlx->game.dim.y)
 	{
 		mlx->map[i] = get_next_line(fd);
-		//printf("Length x:[%d]%zu\n", i, ft_len(mlx->map[i]));
 		if (ft_len(mlx->map[i]) != (size_t)(mlx->game.dim.x))
 		{
 			freeme(mlx, i, fd);
 			exit(ft_putstr_fd("Map not straight", 2));
 		}
-		//printf("Map string[%i]:%s", i, mlx->map[i]);
 		i++;
 	}
 	close(fd);

@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/18 17:02:05 by qduong            #+#    #+#              #
-#    Updated: 2022/04/22 19:25:45 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/24 15:14:04 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ SRCS =	main.c \
 		map_check.c \
 		utils.c \
 		argv_check.c \
-		freestuff.c
+		freestuff.c\
+		move_right_left.c\
+		move_up_down.c
 #map_parse_so_long_test.c
 RM = rm -rf
 CC = gcc

@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 19:33:48 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/22 19:39:24 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/24 15:19:16 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "mlx/mlx.h"
 # include "lib/ft_printf.h"
 # include "lib/get_next_line.h"
+# include <stdio.h>
 
 /*
 ** DEFINE KEYS
@@ -79,5 +80,14 @@ size_t	ft_len(const char *s);
 void	freeme(t_vars *mlx, int i, int fd);
 void	freeme2(t_vars *mlx);
 int		freeme3(t_vars *mlx);
+
+/*
+** Move Functions
+*/
+
+void	left(t_vars *mlx);
+void	up(t_vars *mlx);
+void	right(t_vars *mlx);
+void	down(t_vars *mlx);
 
 #endif
