@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/18 17:02:05 by qduong            #+#    #+#              #
-#    Updated: 2022/04/25 18:00:16 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/25 18:03:56 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ clean:
 	${RM} ${OBJS}
 	@make clean -C lib/
 	@make clean -C lib/libft
+	@make clean -C mlx
 #$(RM) */*.o */*/*.o
 
 fclean: clean
