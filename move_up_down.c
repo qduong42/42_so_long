@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 15:14:30 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 15:35:27 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:59:55 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,18 @@ static void	moveup(t_vars *mlx, char x)
 	if (x == '0')
 	{
 		mlx->map[mlx->game.pos.y - 1][mlx->game.pos.x] = 'P';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y - 1, 'P');
 		mlx->map[mlx->game.pos.y][mlx->game.pos.x] = '0';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.y --;
 		mlx->game.moves++;
 	}
 	else if (x == 'C')
 	{
 		mlx->map[mlx->game.pos.y - 1][mlx->game.pos.x] = 'P';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y - 1, 'P');
 		mlx->map[mlx->game.pos.y][mlx->game.pos.x] = '0';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.y --;
 		mlx->game.collectibles --;
 		mlx->game.moves++;
@@ -75,14 +79,18 @@ static void	movedown(t_vars *mlx, char x)
 	if (x == '0')
 	{
 		mlx->map[mlx->game.pos.y + 1][mlx->game.pos.x] = 'P';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y + 1, 'P');
 		mlx->map[mlx->game.pos.y][mlx->game.pos.x] = '0';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.y ++;
 		mlx->game.moves++;
 	}
 	else if (x == 'C')
 	{
 		mlx->map[mlx->game.pos.y + 1][mlx->game.pos.x] = 'P';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y + 1, 'P');
 		mlx->map[mlx->game.pos.y][mlx->game.pos.x] = '0';
+		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.y ++;
 		mlx->game.collectibles --;
 		mlx->game.moves++;

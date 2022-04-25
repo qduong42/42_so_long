@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 19:33:48 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 18:16:29 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:56:37 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	full_check_map(t_vars *mlx);
 */
 
 size_t	ft_len(const char *s);
+void	put_stuff(t_vars *mlx, int x, int y, char c);
 
 /*
 **Free

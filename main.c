@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 18:16:23 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 11:11:43 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ void	load(t_vars *mlx)
 	mlx -> wall = mlx_xpm_file_to_image(mlx->mlx, \
 	"images/wall.xpm", &mlx->imgx, &mlx->imgy);
 	mlx -> collect = mlx_xpm_file_to_image(mlx->mlx, \
-	"images/き.xpm", &mlx->imgx, &mlx->imgy);
+	"images/qi_tatami.xpm", &mlx->imgx, &mlx->imgy);
 	mlx -> player = mlx_xpm_file_to_image(mlx->mlx, \
 	"images/P2.xpm", &mlx->imgx, &mlx->imgy);
 	mlx -> exit = mlx_xpm_file_to_image(mlx->mlx, \
-	"images/exit.xpm", &mlx->imgx, &mlx->imgy);
+	"images/exit_tatami.xpm", &mlx->imgx, &mlx->imgy);
 	mlx->space = mlx_xpm_file_to_image(mlx->mlx, \
 	"images/tatami.xpm", &mlx->imgx, &mlx->imgy);
 }
