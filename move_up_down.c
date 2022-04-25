@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 15:14:30 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 10:59:55 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 11:29:26 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	moveup(t_vars *mlx, char x)
 		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.y --;
 		mlx->game.moves++;
+		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 	else if (x == 'C')
 	{
@@ -40,6 +41,7 @@ static void	moveup(t_vars *mlx, char x)
 		mlx->game.pos.y --;
 		mlx->game.collectibles --;
 		mlx->game.moves++;
+		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 }
 
@@ -56,13 +58,16 @@ void	up(t_vars *mlx)
 		moveup(mlx, '0');
 	else if (mlx->map[mlx->game.pos.y - 1][mlx->game.pos.x] == '1')
 	{
-		ft_putstr_fd("Only ghosts can move through walls!", 2);
+		ft_putstr_fd("Only ghosts can move through walls!\n", 2);
 		return ;
 	}
 	else if (mlx->map[mlx->game.pos.y - 1][mlx->game.pos.x] == 'E')
 	{
 		if (mlx->game.collectibles != 0)
+		{
+			ft_printf("Collect all the 気 first!\n");
 			return ;
+		}
 		else
 		{
 			ft_printf("Moves:%d\n", mlx->game.moves + 1);
@@ -84,6 +89,7 @@ static void	movedown(t_vars *mlx, char x)
 		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.y ++;
 		mlx->game.moves++;
+		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 	else if (x == 'C')
 	{
@@ -94,6 +100,7 @@ static void	movedown(t_vars *mlx, char x)
 		mlx->game.pos.y ++;
 		mlx->game.collectibles --;
 		mlx->game.moves++;
+		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 }
 //add at start of down fkt to test
@@ -109,13 +116,16 @@ void	down(t_vars *mlx)
 		movedown(mlx, '0');
 	else if (mlx->map[mlx->game.pos.y + 1][mlx->game.pos.x] == '1')
 	{
-		ft_putstr_fd("Only ghosts can move through walls!", 2);
+		ft_putstr_fd("Only ghosts can move through walls!\n", 2);
 		return ;
 	}
 	else if (mlx->map[mlx->game.pos.y + 1][mlx->game.pos.x] == 'E')
 	{
 		if (mlx->game.collectibles != 0)
+		{
+			ft_printf("Collect all the 気 first!\n");
 			return ;
+		}
 		else if (mlx->game.collectibles == 0)
 		{
 			ft_printf("Moves:%d\n", mlx->game.moves + 1);

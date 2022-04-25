@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 11:11:43 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 11:32:19 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ int	main(int argc, char **argv)
 	mlx.mlx = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx, mlx.game.dim.x * 32, \
 	mlx.game.dim.y * 32, "so_long");
-	printf("Dimensions of X%d & Y%d\n", mlx.game.dim.x, mlx.game.dim.y);
 	gib_image(&mlx);
 	mlx_key_hook(mlx.win, key_hook, &mlx);
 	mlx_hook(mlx.win, 17, 0, freeme3, &mlx);

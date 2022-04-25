@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 23:00:11 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/22 18:43:51 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 11:36:48 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,15 @@ void	freeme2(t_vars *mlx)
 	free(mlx->map);
 }
 
+void	destroy_images(t_vars *mlx)
+{
+	mlx_destroy_image(mlx->mlx, mlx->player);
+	mlx_destroy_image(mlx->mlx, mlx->exit);
+	mlx_destroy_image(mlx->mlx, mlx->collect);
+	mlx_destroy_image(mlx->mlx, mlx->wall);
+	mlx_destroy_image(mlx->mlx, mlx->space);
+}
+
 int	freeme3(t_vars *mlx)
 {
 	int	i;
@@ -54,6 +63,9 @@ int	freeme3(t_vars *mlx)
 	free(mlx->map);
 	free(mlx->mlx);
 	if (mlx->game.collectibles == 0)
-		write(1, "You won!", 8);
+	{
+		destroy_images(mlx);
+		write(1, "You won!おめでとうございます", 39);
+	}
 	exit (0);
 }
