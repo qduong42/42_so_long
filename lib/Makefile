@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 13:15:50 by qduong            #+#    #+#              #
-#    Updated: 2022/04/21 13:17:11 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/25 14:30:20 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS=	ft_printf.c\
 		conversion.c\
 		get_next_line.c\
 		get_next_line_utils.c\
+		ft_put_error_string.c
 
 OBJS=${SRCS:.c=.o}
 RM = rm -rf
