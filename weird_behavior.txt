@@ -1,6 +1,0 @@
-Printf problems when not printing Newline.. Something with buffer. 
-So it wasnt a problem with mlx looping.
-printf requires \n to print immediately.
-if mlx loop is not present, program terminates and buffer is cleared
-and printed. Else it is stuck in buffer until program terminates and
-only after that is printed.
