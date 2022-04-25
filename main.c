@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 15:16:52 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 17:30:00 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int	main(int argc, char **argv)
 	full_check_map(&mlx);
 	mlx.mlx = mlx_init();
 	mlx.win = mlx_new_window(mlx.mlx, mlx.game.dim.x * 32, \
-	mlx.game.dim.y * 32, "so_long");
+	mlx.game.dim.y * 32, "geemu");
 	gib_image(&mlx);
 	mlx_key_hook(mlx.win, key_hook, &mlx);
 	mlx_hook(mlx.win, 17, 0, freeme3, &mlx);
