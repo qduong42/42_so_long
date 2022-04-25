@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 19:33:48 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 18:16:29 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:28:52 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 */
 enum	e_keys
 {
-	ESC = 53,
-	UP = 13,
-	DOWN = 1,
-	LEFT = 0,
-	RIGHT = 2
+	ESC = 65307,
+	UP = 119,
+	DOWN = 115,
+	LEFT = 97,
+	RIGHT = 100
 };
 
 typedef struct s_coords

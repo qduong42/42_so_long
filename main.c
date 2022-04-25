@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 18:16:23 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:27:29 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 int	key_hook(int key, t_vars *mlx)
 {
+	printf("Key:%d\n", key);
 	if (key == ESC)
 	{
 		freeme3(mlx);
