@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:35:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 15:15:34 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 14:31:05 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ void	in_check_map(char **argv, t_vars *mlx)
 	free(str);
 	close(fd);
 	if (row < 2)
-		exit(ft_putstr_fd("Not enough characters in .ber to create map\n", 2));
+		exit(ft_put_error("Not enough characters in .ber to create map\n"));
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:40:12 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 15:25:41 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 14:34:05 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	parse_map(char **argv, t_vars *mlx)
 		if (ft_len(mlx->map[i]) != (size_t)(mlx->game.dim.x))
 		{
 			freeme(mlx, i, fd);
-			exit(ft_putstr_fd("Map not straight", 2));
+			exit(ft_put_error("Map not straight"));
 		}
 		i++;
 	}
@@ -120,6 +120,6 @@ void	full_check_map(t_vars *mlx)
 	if (mlx->game.start < 1 || mlx->game.collectibles < 1 || mlx->game.exit < 1)
 	{
 		freeme2(mlx);
-		exit (ft_putstr_fd("Missing P, E or C", 2));
+		exit (ft_put_error("Missing P, E or C"));
 	}
 }

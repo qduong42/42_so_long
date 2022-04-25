@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 23:00:11 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 11:36:48 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 15:13:23 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	destroy_images(t_vars *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->space);
 }
 
+//fscanf(stdin, "c"); insert before exit to pause process and run leaks
+//program name or leaks <PID> -> ps aux grep program name
+//export MallocStackLogging=1
 int	freeme3(t_vars *mlx)
 {
 	int	i;
@@ -60,12 +63,12 @@ int	freeme3(t_vars *mlx)
 		free(mlx->map[i]);
 		i++;
 	}
+	destroy_images(mlx);
 	free(mlx->map);
 	free(mlx->mlx);
 	if (mlx->game.collectibles == 0)
 	{
-		destroy_images(mlx);
-		write(1, "You won!おめでとうございます", 39);
+		write(1, "You won!おめでとうございます!", 39);
 	}
 	exit (0);
 }

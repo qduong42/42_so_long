@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 13:55:10 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/18 14:18:54 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 14:39:29 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void		*ft_calloc(size_t nmemb, size_t size);
 size_t		ft_nlen(const char *s);
 int			ft_gnl_strrchr(const char *s, int c);
 char		*get_next_line(int fd);
+int			ft_put_error(char *s);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 8

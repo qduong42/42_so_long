@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 15:11:34 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 11:29:40 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/25 17:06:46 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	moveleft(t_vars *mlx, char x)
 		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.x --;
 		mlx->game.moves++;
+		put_string_game(mlx);
 		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 	else if (x == 'C')
@@ -41,6 +42,7 @@ static void	moveleft(t_vars *mlx, char x)
 		mlx->game.pos.x --;
 		mlx->game.collectibles --;
 		mlx->game.moves++;
+		put_string_game(mlx);
 		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 }
@@ -70,7 +72,7 @@ void	left(t_vars *mlx)
 		}
 		else
 		{
-			ft_printf("Moves:%d\n", mlx->game.moves + 1);
+			ft_printf("You took:Moves:%d\n", mlx->game.moves + 1);
 			freeme3(mlx);
 		}
 	}
@@ -89,6 +91,7 @@ static void	moveright(t_vars *mlx, char x)
 		put_stuff(mlx, mlx->game.pos.x, mlx->game.pos.y, '0');
 		mlx->game.pos.x ++;
 		mlx->game.moves++;
+		put_string_game(mlx);
 		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 	else if (x == 'C')
@@ -100,6 +103,9 @@ static void	moveright(t_vars *mlx, char x)
 		mlx->game.pos.x ++;
 		mlx->game.collectibles --;
 		mlx->game.moves++;
+		mlx->string = ft_itoa(mlx->game.moves);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->wall, 0, 0);
+		mlx_string_put(mlx->mlx, mlx->win, 12, 12, 0x00000000, mlx->string);
 		ft_printf("Moves:%d\n", mlx->game.moves);
 	}
 }
@@ -129,7 +135,7 @@ void	right(t_vars *mlx)
 		}
 		else
 		{
-			ft_printf("Moves:%d\n", mlx->game.moves + 1);
+			ft_printf("You took:Moves:%d\n", mlx->game.moves + 1);
 			freeme3(mlx);
 		}
 	}

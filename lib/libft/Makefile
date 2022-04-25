@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qduong <qduong@student.42wolfsburg.de>     +#+  +:+       +#+         #
+#    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/07 20:29:17 by qduong            #+#    #+#              #
-#    Updated: 2021/06/12 23:49:19 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/25 15:20:24 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
