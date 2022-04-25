@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 19:33:48 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/24 18:14:29 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/24 18:16:29 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct s_vars
 {
 	void		*mlx;
 	void		*win;
-	void		*win2;
 	char		**map;
 	void		*player;
 	void		*exit;
