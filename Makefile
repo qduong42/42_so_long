@@ -6,7 +6,7 @@
 #    By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/18 17:02:05 by qduong            #+#    #+#              #
-#    Updated: 2022/04/25 17:11:01 by qduong           ###   ########.fr        #
+#    Updated: 2022/04/25 18:00:16 by qduong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ NAME = so_long
 all: $(NAME)
 
 easy:
-	./so_long maps/簡単.ber
+	./so_long maps/easy.ber
 	
 up:
 	./so_long maps/up.ber
