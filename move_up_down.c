@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 15:14:30 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 17:06:53 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/26 18:05:06 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,4 +146,5 @@ void	put_string_game(t_vars *mlx)
 	mlx->string = ft_itoa(mlx->game.moves);
 	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->wall, 0, 0);
 	mlx_string_put(mlx->mlx, mlx->win, 12, 12, 0x00000000, mlx->string);
+	free(mlx->string);
 }

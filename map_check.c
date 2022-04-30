@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:40:12 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 14:34:05 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/26 11:05:07 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ void	check_wall(t_vars *mlx)
 {
 	int	y;
 	int	x;
-	int	i;
 
-	i = 0;
 	y = 0;
 	x = 0;
 	while (y < mlx->game.dim.y)

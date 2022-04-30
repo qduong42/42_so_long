@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/25 17:30:00 by qduong           ###   ########.fr       */
+/*   Updated: 2022/04/26 18:10:45 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	key_hook(int key, t_vars *mlx)
 	else if (key == RIGHT)
 		right(mlx);
 	else
-		ft_putstr_fd("Use WASD to move or ESC to quit\n", 2);
+		ft_putendl_fd("Use WASD to move or ESC to quit", 2);
 	return (0);
 }
 
@@ -83,8 +83,8 @@ void	gib_image(t_vars *mlx)
 	int	x;
 	int	y;
 
-	y = -1;
 	load(mlx);
+	y = -1;
 	while (++y < mlx->game.dim.y)
 	{
 		x = -1;
@@ -109,7 +109,7 @@ int	main(int argc, char **argv)
 	t_vars	mlx;
 
 	if (check_input(argc, argv))
-		exit(ft_put_error(("Run the program with\t ./so_long valid_map.ber\n")));
+		exit(ft_put_error(("Run the program with\t ./so_long valid_map.ber")));
 	init(&mlx);
 	in_check_map(&argv[1], &mlx);
 	parse_map(&argv[1], &mlx);
