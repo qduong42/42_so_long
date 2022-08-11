@@ -6,7 +6,7 @@
 /*   By: qduong <qduong@students.42wolfsburg.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 18:43:21 by qduong            #+#    #+#             */
-/*   Updated: 2022/04/22 19:22:13 by qduong           ###   ########.fr       */
+/*   Updated: 2022/08/11 20:54:53 by qduong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	// int i = 0;
 	// while (i < mlx->game.dim.y)
 	// {
-	// 	printf("__NEW__Map string[%i]:%s\n", i, mlx->map[i]);
+	// 	printf(" string[%i]:%s\n", i, mlx->map[i]);
 	// 	i++;
 	// }
 
@@ -41,7 +41,7 @@ void	moveup(t_vars *mlx, char x)
 	int i = 0;
 	while (i < mlx->game.dim.y)
 	{
-		printf("__NEW__Map string[%i]:%s\n", i, mlx->map[i]);
+		printf("Map string[%i]:%s", i, mlx->map[i]);
 		i++;
 	}
 }
@@ -56,12 +56,15 @@ void	up(t_vars *mlx)
 		moveup(mlx, '0');
 	else if (mlx->map[mlx->game.pos.y - 1][mlx->game.pos.x] == '1')
 	{
-		ft_putstr_fd("Only ghosts can move through walls!", 2);
+		ft_putstr_fd("Only ghosts can move through walls!\n", 2);
 		return ;
 	}
 	else if (mlx->map[mlx->game.pos.y - 1][mlx->game.pos.x] == 'E')
 		if (mlx->game.collectibles != 0)
-		return; // nothing happens
+		{
+			ft_putstr_fd("Collect all collectibles before going to the exit!\n", 2);
+			return ; // nothing happens
+		}
 	else
 	{
 		ft_printf("Moves:%d\n", mlx->game.moves + 1);
@@ -92,7 +95,7 @@ void	movedown(t_vars *mlx, char x)
 	int i = 0;
 	while (i < mlx->game.dim.y)
 	{
-		printf("__NEW__Map string[%i]:%s\n", i, mlx->map[i]);
+		printf("Map string[%i]:%s", i, mlx->map[i]);
 		i++;
 	}
 }
@@ -112,7 +115,10 @@ void	down(t_vars *mlx)
 	}
 	else if (mlx->map[mlx->game.pos.y + 1][mlx->game.pos.x] == 'E')
 		if (mlx->game.collectibles != 0)
+		{
+		ft_putstr_fd("Collect all collectibles before going to the exit!\n", 2);
 		return; // nothing happens
+		}
 	else
 	{
 		ft_printf("Moves:%d\n", mlx->game.moves + 1);
@@ -143,7 +149,7 @@ void	moveleft(t_vars *mlx, char x)
 	int i = 0;
 	while (i < mlx->game.dim.y)
 	{
-		printf("__NEW__Map string[%i]:%s\n", i, mlx->map[i]);
+		printf("Map string[%i]:%s", i, mlx->map[i]);
 		i++;
 	}
 }
@@ -163,7 +169,10 @@ void	left(t_vars *mlx)
 	}
 	else if (mlx->map[mlx->game.pos.y][mlx->game.pos.x - 1] == 'E')
 		if (mlx->game.collectibles != 0)
+		{
+			ft_putstr_fd("Collect all collectibles before going to the exit!\n", 2);
 			return ; // nothing happens
+		}
 	else
 	{
 		ft_printf("Moves:%d\n", mlx->game.moves + 1);
@@ -194,7 +203,7 @@ void	moveright(t_vars *mlx, char x)
 	int i = 0;
 	while (i < mlx->game.dim.y)
 	{
-		printf("__NEW__Map string[%i]:%s\n", i, mlx->map[i]);
+		printf("Map string[%i]:%s", i, mlx->map[i]);
 		i++;
 	}
 }
@@ -214,7 +223,10 @@ void	right(t_vars *mlx)
 	}
 	else if (mlx->map[mlx->game.pos.y][mlx->game.pos.x + 1] == 'E')
 		if (mlx->game.collectibles != 0)
-		return; // nothing happens
+		{
+			ft_putstr_fd("Collect all collectibles before going to the exit!\n", 2);
+			return; // nothing happens
+		}
 	else
 	{
 		ft_printf("Moves:%d\n", mlx->game.moves + 1);
